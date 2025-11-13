@@ -5,8 +5,11 @@ from sqlalchemy.orm import relationship
 class Animal(Base):
     __tablename__ = "animals"
 
-    id = Column(Integer, primary_key=True, index=True)
-    # A compléter
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    name = Column(String(50), nullable=False)
+    age = Column(Integer)
+    gender = Column(String(50), nullable=False)
+    description = Column(String(255))
     photo_url = Column(String(300))
     species_id = Column(Integer, ForeignKey("species.id"))
 
