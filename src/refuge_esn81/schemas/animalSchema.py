@@ -1,9 +1,13 @@
+from typing import Optional
 from pydantic import BaseModel
 from refuge_esn81.schemas.speciesSchema import Species
 
 class AnimalBase(BaseModel):
     name: str
-    # A compléter
+    age: Optional[int] = None
+    gender: str
+    description: Optional[str] = None
+    photo_url: Optional[str] = None
     species_id: int
 
 class AnimalCreate(AnimalBase):
@@ -11,8 +15,8 @@ class AnimalCreate(AnimalBase):
 
 class Animal(AnimalBase):
     id: int
-    # A compléter
-    species: Species
+    species: Optional[Species] = None
+    # species: Species
 
     class Config:
         from_attributes = True
