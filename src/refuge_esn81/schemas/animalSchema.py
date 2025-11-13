@@ -17,9 +17,8 @@ class AnimalCreate(AnimalBase):
 class Animal(AnimalBase):
     """Schema for animal with ID and species information"""
     id: int
-
+    # à compléter
     species: Species
 
     class Config:
         from_attributes = True
-        orm_mode = True

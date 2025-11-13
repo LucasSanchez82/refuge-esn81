@@ -1,10 +1,10 @@
-from fastapi import APIRouter, FastAPI, Depends, HTTPException
+from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from refuge_esn81.database.database import get_db
-from refuge_esn81.schemas.animalSchema import AnimalCreate as Animal
+from refuge_esn81.schemas.animalSchema import Animal, AnimalCreate
 from refuge_esn81.services.animalService import AnimalService
 
-animalsRouter = APIRouter(prefix="/animals", tags=["animals"])
+animalsRouter = APIRouter(prefix="/api/animals", tags=["animals"])
 
 @animalsRouter.get(
     "/",
