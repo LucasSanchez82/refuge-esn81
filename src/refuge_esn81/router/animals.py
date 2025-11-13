@@ -5,7 +5,7 @@ from refuge_esn81.database.database import get_db
 from refuge_esn81.services.animalService import AnimalService
 
 animalsRouter = APIRouter(prefix="/animals", tags=["animals"])
-
+# sd
 @animalsRouter.get("/", response_model=list[dict])
 async def get_species(db: Session = Depends(get_db)):
     service = AnimalService()
