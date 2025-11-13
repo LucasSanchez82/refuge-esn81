@@ -1,5 +1,5 @@
 from typing import Optional
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from refuge_esn81.schemas.speciesSchema import Species
 
 class AnimalBase(BaseModel):
@@ -11,9 +11,11 @@ class AnimalBase(BaseModel):
     species_id: int
 
 class AnimalCreate(AnimalBase):
+    """Schema for creating a new animal"""
     pass
 
 class Animal(AnimalBase):
+    """Schema for animal with ID and species information"""
     id: int
     # à compléter
     species: Species
