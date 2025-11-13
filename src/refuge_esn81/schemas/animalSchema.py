@@ -15,9 +15,8 @@ class AnimalCreate(AnimalBase):
 
 class Animal(AnimalBase):
     id: int
-
+    # à compléter
     species: Species
 
     class Config:
         from_attributes = True
-        orm_mode = True
